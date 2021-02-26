@@ -1,6 +1,6 @@
 # 								DTravel
 
-**DTravel** - Django Framework project about job.
+**DTravel** - Django Framework project about travel.
 
 This is really better version of this [github]: https://github.com/DenisB7/stepik_chapter1 
 
