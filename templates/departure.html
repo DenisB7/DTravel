@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .tr_descr {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100px /* fallback */;
+    }
+    .tr_title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px /* fallback */;
+    }
+</style>
+    <h1 class="display-5 mt-4">Departure {{ departure_city }}</h1>
+    <p class="mb-4">Found {{ tours_num }} tours, from {{ tours_min_price }} $ to {{ tours_max_price }} $ and from {{ tours_min_nights }} to {{ tours_max_nights }} nights</p>
+    <!-- CARDS -->
+    <div class="row mt-5">
+        {% for tour_id, tour_info in tours_dict.items %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-4by3">
+             <img class="card-img-top embed-responsive-item" src="{{ tour_info.picture }}" alt="" />
+          </div>
+          <div class="card-body text-center">
+            <h2 class="h5 card-title tr_title font-weight-bold">{{ tour_info.country }}: {{ tour_info.title }}</h2>
+              <p class="card-text"> {{ tour_info.stars }} </p>
+              <p class="card-text tr_descr">{{ tour_info.description }}</p>
+              <p class="card-text font-weight-bold">{{ tour_info.date }}, {{ tour_info.nights }} nights</p>
+              <p class="card-text font-weight-bold">{{ tour_info.price }} $</p>
+              <a href="{% url 'tour' tour_id %}" class="btn btn-sm btn-primary">More details</a>
+          </div>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+{% endblock %}
