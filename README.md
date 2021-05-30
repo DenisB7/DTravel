@@ -2,9 +2,11 @@
 
 **DTravel** - Django Framework project about travel.
 
-This is really better version of this [github]: https://github.com/DenisB7/stepik_chapter1 
+Some information:
+- without accounts and payments :)
+- deployed on Heroku
 
-and this one [github]: https://github.com/DenisB7/stepik_chapter2
+This is really better version of this (consists of 2 parts) [github]: https://github.com/DenisB7/stepik_chapter1 (beginning) and this one [github]: https://github.com/DenisB7/stepik_chapter2 (continue)
 
 **This project was a homework of course** from [Stepik]: https://stepik.org/
 
